@@ -29,7 +29,7 @@ npm run start
 
 ## Deployment
 
-> [!WARNING]  
+> [!WARNING]
 > Cloudflare does _not_ use `wrangler.toml` to configure deployment bindings.
 > You **MUST** [configure deployment bindings manually in the Cloudflare dashboard][bindings].
 
@@ -46,3 +46,8 @@ npm run deploy
 ```
 
 [bindings]: https://developers.cloudflare.com/pages/functions/bindings/
+
+## Notes
+
+- [Cloudflare > Pages > Framework Guides > Deploy a Remix Site](https://developers.cloudflare.com/pages/framework-guides/deploy-a-remix-site/)
+- [Implement SSO Authentication in Remix using GitHub and Remix Auth in Under 10 Minutes](https://www.telerik.com/blogs/implement-sso-authentication-remix-using-github-remix-auth-under-10-minutes)
