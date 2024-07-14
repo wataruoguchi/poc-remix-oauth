@@ -4,7 +4,7 @@ import {
   json,
 } from "@remix-run/cloudflare";
 import { Form, useLoaderData } from "@remix-run/react";
-import { db, Env } from "../db.server";
+import { db } from "../db.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,7 +17,9 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = async ({ context }: LoaderFunctionArgs) => {
-  const { fetchAllUsers } = db(context.env as Env);
+  // https://developers.cloudflare.com/pages/framework-guides/deploy-a-remix-site/
+  const { env } = context.cloudflare;
+  const { fetchAllUsers } = db(env);
   const users = await fetchAllUsers();
   return json({ users });
 };
