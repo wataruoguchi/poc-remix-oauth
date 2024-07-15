@@ -1,0 +1,9 @@
+name = "poc-remix-oauth"
+compatibility_date = "2024-04-05"
+
+# https://developers.cloudflare.com/d1/get-started/#3-create-a-database
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "poc-remix-oauth"
+database_id = "YOUR_DB_ID"
+migrations_dir = "drizzle"
