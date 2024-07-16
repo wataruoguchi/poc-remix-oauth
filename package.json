@@ -23,6 +23,8 @@
     "d1:seed": "tsx ./dev-utils/seed.ts"
   },
   "dependencies": {
+    "@conform-to/react": "^1.1.5",
+    "@conform-to/zod": "^1.1.5",
     "@remix-run/cloudflare": "^2.10.2",
     "@remix-run/cloudflare-pages": "^2.10.2",
     "@remix-run/react": "^2.10.2",
@@ -54,6 +56,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "node-fetch": "^3.3.2",
+    "remix-flat-routes": "^0.6.5",
     "tsx": "^4.16.2",
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
