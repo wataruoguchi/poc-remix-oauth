@@ -4,6 +4,7 @@ import { ActionFunctionArgs, json } from "@remix-run/cloudflare";
 import { useFetcher, useFetchers, useLoaderData } from "@remix-run/react";
 import { z } from "zod";
 import { invariantResponse } from "~/utils/misc";
+import { SunMedium, Moon } from "lucide-react";
 import { setTheme, type Theme } from "~/utils/theme.server";
 
 const ThemeFormSchema = z.object({
@@ -48,8 +49,18 @@ export function ThemeSwitch({
   const mode = userPreference ?? "light";
 
   const modeLabel = {
-    light: <span className="sr-only">Light</span>,
-    dark: <span className="sr-only">Dark</span>,
+    light: (
+      <>
+        <SunMedium />
+        <span className="sr-only">Light</span>
+      </>
+    ),
+    dark: (
+      <>
+        <Moon />
+        <span className="sr-only">Dark</span>
+      </>
+    ),
   };
 
   return (
