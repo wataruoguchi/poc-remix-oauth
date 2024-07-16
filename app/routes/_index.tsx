@@ -5,6 +5,7 @@ import {
 } from "@remix-run/cloudflare";
 import { Form, useLoaderData } from "@remix-run/react";
 import { db } from "../db.server";
+import { Button } from "@/Button";
 
 export const meta: MetaFunction = () => {
   return [
@@ -41,7 +42,7 @@ export default function Index() {
       )}
       <div>
         <Form action="/auth/github" method="post">
-          <button>Login with GitHub</button>
+          <Button>Login with GitHub</Button>
         </Form>
       </div>
       <ul>
