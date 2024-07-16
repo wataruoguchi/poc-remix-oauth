@@ -6,8 +6,13 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { getTheme } from "./utils/theme.server";
-import { json, LoaderFunctionArgs } from "@remix-run/cloudflare";
+import { json, LinksFunction, LoaderFunctionArgs } from "@remix-run/cloudflare";
 import { ThemeSwitch, useTheme } from "./routes/resources+/theme-switch";
+import stylesheet from "~/tailwind.css?url";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const theme = getTheme(request);
@@ -30,7 +35,7 @@ export function Layout({
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-white dark:bg-black text-black dark:text-white">
         <ThemeSwitch userPreference={theme} />
         {children}
         {env && (
