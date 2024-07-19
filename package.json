@@ -13,13 +13,12 @@
     "typegen": "wrangler types",
     "preview": "npm run build && wrangler pages dev ./build/client",
     "build-cf-types": "wrangler types",
-    "drizzle:gen": "drizzle-kit generate",
     "drizzle:drop": "drizzle-kit drop",
     "drizzle:up": "drizzle-kit up",
     "drizzle:check": "drizzle-kit check",
     "drizzle:studio": "drizzle-kit studio",
-    "d1:exec": "DATABASE_NAME=poc-remix-oauth && wrangler d1 execute $DATABASE_NAME",
-    "d1:migrate": "DATABASE_NAME=poc-remix-oauth && wrangler d1 migrations apply $DATABASE_NAME",
+    "d1:exec": "export DATABASE_NAME=poc-remix-oauth && wrangler d1 execute $DATABASE_NAME",
+    "d1:migrate": "export DATABASE_NAME=poc-remix-oauth && wrangler d1 migrations apply $DATABASE_NAME",
     "d1:seed": "tsx ./dev-utils/seed.ts"
   },
   "dependencies": {
@@ -46,7 +45,6 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240712.0",
     "@faker-js/faker": "^8.4.1",
-    "@miniflare/d1": "^2.14.2",
     "@remix-run/dev": "^2.8.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
@@ -64,6 +62,7 @@
     "node-fetch": "^3.3.2",
     "postcss": "^8.4.39",
     "remix-flat-routes": "^0.6.5",
+    "seed-d1": "^0.0.1",
     "tailwindcss": "^3.4.5",
     "tsx": "^4.16.2",
     "typescript": "^5.1.6",
