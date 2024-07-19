@@ -9,8 +9,7 @@ import { getTheme } from "./utils/theme.server";
 import { json, LinksFunction, LoaderFunctionArgs } from "@remix-run/cloudflare";
 import { ThemeSwitch, useTheme } from "./routes/resources+/theme-switch";
 import stylesheet from "~/tailwind.css?url";
-import { setToast, ToastProvider } from "./components/ToastProvider";
-import { Toast, ToastContent } from "./components/Toast";
+import { Toaster, toast } from "sonner";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -39,21 +38,9 @@ export function Layout({
       </head>
       <body className="bg-white dark:bg-black text-black dark:text-white">
         <ThemeSwitch userPreference={theme} />
-        <ToastProvider<ToastContent> renderToast={setToast(Toast)}>
-          {(state) => (
-            <button
-              onClick={() =>
-                state.add({
-                  title: "Hello",
-                  description: "World... here is more text",
-                })
-              }
-            >
-              Click
-            </button>
-          )}
-        </ToastProvider>
+        <button onClick={() => toast("Hello World")}>Click</button>
         {children}
+        <Toaster position="top-right" />
         {env && (
           <script
             dangerouslySetInnerHTML={{
