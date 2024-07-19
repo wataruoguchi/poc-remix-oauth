@@ -24,8 +24,6 @@
   "dependencies": {
     "@conform-to/react": "^1.1.5",
     "@conform-to/zod": "^1.1.5",
-    "@react-aria/toast": "^3.0.0-beta.12",
-    "@react-stately/toast": "^3.0.0-beta.4",
     "@remix-run/cloudflare": "^2.10.2",
     "@remix-run/cloudflare-pages": "^2.10.2",
     "@remix-run/react": "^2.10.2",
@@ -39,6 +37,7 @@
     "react-dom": "^18.2.0",
     "remix-auth": "^3.6.0",
     "remix-auth-github": "^1.7.0",
+    "sonner": "^1.5.0",
     "tailwind-variants": "^0.2.1",
     "zod": "^3.23.8"
   },
