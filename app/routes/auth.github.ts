@@ -1,5 +1,4 @@
-import type { ActionFunctionArgs } from "@remix-run/cloudflare";
-import { redirect } from "@remix-run/node";
+import { type ActionFunctionArgs, redirect } from "@remix-run/cloudflare";
 import { authenticator } from "../auth.server";
 
 export async function loader() {

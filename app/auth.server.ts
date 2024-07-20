@@ -18,3 +18,8 @@ const gitHubStrategy = new GitHubStrategy(
 
 export const authenticator = new Authenticator(sessionStorage);
 authenticator.use(gitHubStrategy);
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const requireAnonymous = (_request: Request) => {
+  // TODO
+};
