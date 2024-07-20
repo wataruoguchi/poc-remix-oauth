@@ -27,6 +27,7 @@
     "@remix-run/cloudflare": "^2.10.2",
     "@remix-run/cloudflare-pages": "^2.10.2",
     "@remix-run/react": "^2.10.2",
+    "crypto-js": "^4.2.0",
     "drizzle-orm": "^0.32.0",
     "drizzle-zod": "^0.5.1",
     "isbot": "^4.1.0",
@@ -37,7 +38,9 @@
     "react-dom": "^18.2.0",
     "remix-auth": "^3.6.0",
     "remix-auth-github": "^1.7.0",
+    "remix-utils": "^7.6.0",
     "sonner": "^1.5.0",
+    "spin-delay": "^2.0.0",
     "tailwind-variants": "^0.2.1",
     "zod": "^3.23.8"
   },

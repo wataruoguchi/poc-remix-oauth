@@ -36,3 +36,12 @@ export function Button(props: ButtonProps) {
       )} />
   );
 }
+
+export const ButtonForwardable = React.forwardRef<HTMLButtonElement, ButtonProps>(({className, ...props}, ref) => {
+  return <RACButton {...props}
+    ref={ref}
+    className={composeRenderProps(
+      className,
+      (className, renderProps) => button({...renderProps, variant: props.variant, className})
+  )} />
+});

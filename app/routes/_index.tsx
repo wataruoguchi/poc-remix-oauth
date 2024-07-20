@@ -4,7 +4,7 @@ import {
   json,
 } from "@remix-run/cloudflare";
 import { Form, useLoaderData } from "@remix-run/react";
-import { db } from "../db.server";
+import { db } from "../utils/db.server";
 import { Button } from "@/Button";
 
 export const meta: MetaFunction = () => {
@@ -28,7 +28,7 @@ export const loader = async ({ context }: LoaderFunctionArgs) => {
 export default function Index() {
   const { users } = useLoaderData<typeof loader>();
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+    <div>
       <h1>Welcome to Remix (with Vite and Cloudflare)</h1>
       {users.length > 0 && (
         <div>
@@ -41,6 +41,7 @@ export default function Index() {
         </div>
       )}
       <div>
+        <a href="/login">Go to Login page</a>
         <Form action="/auth/github" method="post">
           <Button>Login with GitHub</Button>
         </Form>
